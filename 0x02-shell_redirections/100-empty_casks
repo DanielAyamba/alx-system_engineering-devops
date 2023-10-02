@@ -1,0 +1,2 @@
+#!/bin/ash
+find . -empty | rev | cut -d '/' -f l | rev
