@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Turned on Apache Server with this magic line
+# generating shh key pairs
 
-echo "ServerName localhost" >> /etc/apache2.conf
-service apache2 start
+ssh-keygen -t rsa -b 4096 -p betty -f school
