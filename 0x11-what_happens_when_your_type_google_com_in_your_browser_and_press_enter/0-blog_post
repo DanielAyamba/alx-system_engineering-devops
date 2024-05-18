@@ -1,0 +1,36 @@
+Have you ever found yourself staring at your browser’s address bar, wondering what happens when you type in a URL like `https://www.google.com` and press Enter? It’s a seemingly simple action, but it triggers a fascinating sequence of events that spans multiple layers of the internet infrastructure. Let’s dive into this intricate process and unravel the magic that unfolds with every click.
+
+The first step is to resolve the human-readable domain name (www.google.com) into an IP address that computers can understand. Your browser fires off a DNS (Domain Name System) request to a DNS server, which acts as the internet’s directory service. The DNS server looks up the IP address associated with www.google.com and sends it back to your browser. The browser does this taking into consideration, the following.
+TCP/IP
+
+With the IP address in hand, your browser establishes a TCP (Transmission Control Protocol) connection with the server at that IP address. TCP is a communication protocol that ensures data packets are reliably delivered in the correct order. The browser also uses IP (Internet Protocol) to handle routing and logical addressing.
+
+Firewall
+
+Before your request reaches the server, it may pass through a firewall, which acts as a security gate. The firewall inspects the incoming traffic and applies predefined rules to allow or block the request based on factors like the source IP, port numbers, and protocols used.
+
+HTTPS/SSL
+
+You noticed that the URL starts with “https,” which indicates a secure connection. This means your browser will establish an SSL (Secure Sockets Layer) or TLS (Transport Layer Security) encrypted connection with the server. SSL/TLS ensures that the data exchanged between your browser and the server is encrypted and cannot be intercepted or tampered with by third parties.
+
+Load Balancer
+
+Large websites like Google use load balancers to distribute incoming traffic across multiple servers. A load balancer acts as a traffic cop, routing your request to one of the available web servers based on factors like server load, geographic proximity, and fault tolerance.
+
+Web Server
+
+Your request finally reaches a web server, which is responsible for handling HTTP requests and serving web content. The web server processes the request, retrieves the requested resources (HTML, CSS, JavaScript files, images, etc.), and prepares the response.
+
+Application Server
+
+For more complex websites, an application server may be involved. This server runs the website’s application logic, interacting with databases, processing user inputs, and generating dynamic content. The web server and application server may be separate components or combined into a single system.
+
+Database
+
+If the website needs to fetch or store data, it will interact with a database server. Databases store and manage structured data, such as user accounts, blog posts, product catalogs, etc. The application server communicates with the database, retrieving or updating data as needed to fulfill the user’s request.
+
+Response
+
+Finally, the web server sends the assembled response back through the same path, passing through the load balancer, firewall, and internet infrastructure until it reaches your browser. Your browser then renders the HTML, CSS, JavaScript, and other resources to display the Google homepage (or whichever page you requested).
+
+This entire process happens in a matter of milliseconds, thanks to the intricate coordination of various components and protocols that make up the internet’s infrastructure. The next time you type a URL into your browser, remember the incredible journey it takes to bring you the content you requested.
