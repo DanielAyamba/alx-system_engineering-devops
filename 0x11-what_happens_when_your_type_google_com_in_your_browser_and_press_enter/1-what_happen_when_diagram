@@ -1,0 +1,101 @@
+In today’s digital age, accessing a website is such a seamless and instantaneous experience that we often overlook the intricate processes and components involved behind the scenes. When you type a URL into your browser and press Enter, a complex chain of events is set in motion, orchestrating the retrieval and rendering of the desired web page. In this blog post, we’ll explore the intricate flow of a web request, unraveling the journey it undertakes from the moment you hit Enter to the final display of the website on your screen. Let’s first of all consider the web schema below before we take an elaborate explanation to it.
+
++———-+
+| Browser |
++———-+
+|
+| 1. DNS Resolution
+v
++———-+
+| DNS |
++———-+
+|
+| 2. Server IP
+v
++———-+ +———-+
+| Firewall |<->| Firewall |
++———-+ +———-+
+|
+| 3. Traffic Encryption (HTTPS)
+v
++———-+
+| Load |
+| Balancer |
++———-+
+|
+| 4. Request Distribution
+v
++———-+ +———-+
+| Web | | Web |
+| Server | | Server |
++———-+ +———-+
+|
+| 5. Web Page Request
+v
++———-+
+| App |
+| Server |
++———-+
+|
+| 6. Data Request
+v
++———-+
+| Database |
++———-+
+|
+| 7. Data Response
+^
+|
++———-+
+| App |
+| Server |
++———-+
+|
+| 8. Web Page Generation
+^
+|
++———-+ +———-+
+| Web | | Web |
+| Server | | Server |
++———-+ +———-+
+|
+| 9. Web Page Response
+^
++———-+
+| Load |
+| Balancer |
++———-+
+|
+| 10. Encrypted Response
+^
++———-+ +———-+
+| Firewall |<->| Firewall |
++———-+ +———-+
+|
+| 11. DNS Resolution
+^
++———-+
+| DNS |
++———-+
+|
+| 12. Response
+v
++———-+
+| Browser |
++———-+
+
+Here’s a breakdown of the schema:
+
+The browser sends a DNS request to resolve www.google.com to an IP address.
+The DNS server responds with the IP address of the Google server.
+The browser sends an HTTPS request to the server IP on the appropriate port (443 for HTTPS). The traffic is encrypted (SSL/TLS).
+The request goes through firewalls on both the client and server sides.
+The request is distributed to one of the available web servers via a load balancer.
+The web server receives the request and passes it to the application server.
+The application server requests data from the database if needed.
+The database responds with the requested data.
+The application server generates the web page using the data from the database.
+The web server serves the generated web page as an encrypted HTTPS response.
+The encrypted response goes through the firewalls on both sides.
+The browser receives the encrypted response, decrypts it, and renders the web page.
+This schema illustrates the key components and steps involved in the flow of the request when accessing https://www.google.com, including DNS resolution, traffic encryption, firewalls, load balancing, web servers, application servers, and database interactions.
